@@ -461,3 +461,28 @@ line {
 	background-color: white;
 	border-radius: 40px;
 }
+
+.box20 {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 100px;
+	top: 700px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+	transition: all 1s;
+}
+
+.box20 h3 {
+	text-align: center;
+	line-height: 100px;
+	transition: all 1s;
+}
+
+.box20:hover {
+	background-color: #fff;
+}
+
+.box20:hover h3 {
+	color: rgb(214, 47, 178);
+}

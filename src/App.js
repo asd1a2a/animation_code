@@ -445,6 +445,9 @@ function App() {
 						<motion.div className="handle" layout transition={spring} />
 					</div>
 				</div>
+				<div className="box20">
+					<h3>Hover Me!</h3>
+				</div>
 			</div>
 		</div>
 	);
