@@ -1,7 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { animate, motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
 import "./App.css";
+import TypingAnimator from "react-typing-animator";
+
+import { Refresh } from "./Refresh.tsx";
 
 function App() {
 	const draw = {
@@ -54,6 +57,9 @@ function App() {
 		const animation = animate(count, 100, { duration: 3 });
 		return animation.stop;
 	}, []);
+
+	const constraintsRef = useRef(null);
+
 	return (
 		<div className="animation-project">
 			<h1>Animation Project</h1>
@@ -218,6 +224,89 @@ function App() {
 							repeatDelay: 0,
 						}}
 					></motion.div>
+				</div>
+				<div className="box10">
+					<motion.p>
+						E
+						<motion.span
+							animate={{
+								opacity: [1, 1, 0.4, 0.4, 1, 1, 0.4, 0.4],
+							}}
+							transition={{
+								duration: 2,
+								ease: "easeInOut",
+								times: [0, 0.3, 0.31, 0.4, 0.41, 0.91, 0.91, 1],
+								repeat: Infinity,
+								repeatDelay: 0,
+							}}
+						>
+							r
+						</motion.span>
+						ror
+					</motion.p>
+					<motion.p>
+						<motion.span
+							animate={{
+								opacity: [1, 1, 0.4, 0.4, 1, 1, 0.4, 0.4],
+							}}
+							transition={{
+								duration: 3,
+								ease: "easeInOut",
+								times: [0, 0.4, 0.41, 0.5, 0.51, 0.9, 0.91, 1],
+								repeat: Infinity,
+								repeatDelay: 0,
+							}}
+						>
+							4
+						</motion.span>
+						0
+						<motion.span
+							animate={{
+								opacity: [1, 1, 0.4, 0.4, 1, 1, 0.4, 0.4],
+							}}
+							transition={{
+								duration: 4,
+								ease: "easeInOut",
+								times: [0, 0.3, 0.31, 0.4, 0.41, 0.91, 0.91, 1],
+								repeat: Infinity,
+								repeatDelay: 0,
+							}}
+						>
+							4
+						</motion.span>
+					</motion.p>
+				</div>
+				<div className="box11">
+					<motion.div className="out-box">
+						<motion.div
+							className="inner-box"
+							animate={{
+								width: [0, 300],
+							}}
+							transition={{
+								duration: 4,
+								repeat: Infinity,
+								repeatDelay: 2,
+							}}
+						></motion.div>
+					</motion.div>
+				</div>
+				<div className="box12">
+					<TypingAnimator
+						textArray={["Hello I'm Jeong In", "Front end developer"]}
+						cursorColor="#fff"
+						textColor="#fff"
+						fontSize="30px"
+						loop
+						typingSpeed={60}
+						delaySpeed={500}
+						backspace
+						height="100px"
+					/>
+				</div>
+				<div className="box13">
+					<motion.div className="drag-area" ref={constraintsRef} />
+					<motion.div drag dragConstraints={constraintsRef} />
 				</div>
 			</div>
 		</div>
