@@ -73,6 +73,16 @@ function App() {
 	const minutes = time.getMinutes().toString().padStart(2, "0");
 	const seconds = time.getSeconds().toString().padStart(2, "0");
 
+	const [isOn, setIsOn] = useState(false);
+
+	const toggleSwitch = () => setIsOn(!isOn);
+
+	const spring = {
+		type: "spring",
+		stiffness: 700,
+		damping: 30,
+	};
+
 	return (
 		<div className="animation-project">
 			<h1>Animation Project</h1>
@@ -414,6 +424,26 @@ function App() {
 							duration: 1,
 						}}
 					></motion.div>
+				</div>
+				<div className="box18">
+					<motion.h3
+						animate={{
+							color: ["#fff", "#009900", "#fff"],
+						}}
+						transition={{
+							times: [0, 0.5, 1],
+							repeat: Infinity,
+							repeatDelay: 0,
+							duration: 2.5,
+						}}
+					>
+						Ed Sheeran - Thinking Out Loud
+					</motion.h3>
+				</div>
+				<div className="box19">
+					<div className="switch" data-isOn={isOn} onClick={toggleSwitch}>
+						<motion.div className="handle" layout transition={spring} />
+					</div>
 				</div>
 			</div>
 		</div>
