@@ -4,8 +4,6 @@ import { animate, motion, useAnimation, useMotionValue, useTransform } from "fra
 import "./App.css";
 import TypingAnimator from "react-typing-animator";
 
-import { Refresh } from "./Refresh.tsx";
-
 function App() {
 	const draw = {
 		hidden: { pathLength: 0, opacity: 0 },
@@ -59,6 +57,21 @@ function App() {
 	}, []);
 
 	const constraintsRef = useRef(null);
+
+	const [time, setTime] = useState(new Date());
+
+	useEffect(() => {
+		const timerID = setInterval(() => tick(), 1000);
+		return () => clearInterval(timerID);
+	}, []);
+
+	const tick = () => {
+		setTime(new Date());
+	};
+
+	const hours = time.getHours().toString().padStart(2, "0");
+	const minutes = time.getMinutes().toString().padStart(2, "0");
+	const seconds = time.getSeconds().toString().padStart(2, "0");
 
 	return (
 		<div className="animation-project">
@@ -307,6 +320,100 @@ function App() {
 				<div className="box13">
 					<motion.div className="drag-area" ref={constraintsRef} />
 					<motion.div drag dragConstraints={constraintsRef} />
+				</div>
+				<div className="box14">
+					<motion.div
+						className="hour"
+						animate={{
+							rotate: [0, 360],
+							transformOrigin: "left center",
+						}}
+						transition={{
+							duration: 5,
+							times: [0, 1],
+							ease: "linear",
+							repeat: Infinity,
+							repeatDelay: 0,
+						}}
+					></motion.div>
+					<motion.div
+						className="m"
+						animate={{
+							rotate: [0, 360],
+							transformOrigin: "left center",
+						}}
+						transition={{
+							duration: 10,
+							times: [0, 1],
+							ease: "linear",
+							repeat: Infinity,
+							repeatDelay: 0,
+						}}
+					></motion.div>
+				</div>
+				<div className="box15">
+					<div className="out">
+						<p>
+							{hours}
+							<motion.span
+								animate={{
+									opacity: [1, 1, 0, 0],
+								}}
+								transition={{
+									times: [0, 0.5, 0.501, 1],
+									repeat: Infinity,
+									repeatDelay: 0,
+									duration: 1,
+								}}
+							>
+								:
+							</motion.span>
+							{minutes}
+						</p>
+						<div className="btn-out">
+							<div className="btn"></div>
+							<div className="btn"></div>
+							<div className="btn"></div>
+						</div>
+					</div>
+				</div>
+				<div className="box17">
+					<motion.div
+						className="dot"
+						animate={{
+							opacity: [1, 0, 1, 1, 1],
+						}}
+						transition={{
+							times: [0, 0.5, 0.7, 1],
+							repeat: Infinity,
+							repeatDelay: 0.3,
+							duration: 1,
+						}}
+					></motion.div>
+					<motion.div
+						className="dot"
+						animate={{
+							opacity: [1, 1, 0, 1, 1],
+						}}
+						transition={{
+							times: [0, 0.5, 0.7, 1],
+							repeat: Infinity,
+							repeatDelay: 0.3,
+							duration: 1,
+						}}
+					></motion.div>
+					<motion.div
+						className="dot"
+						animate={{
+							opacity: [1, 1, 1, 0, 1],
+						}}
+						transition={{
+							times: [0, 0.5, 0.7, 1],
+							repeat: Infinity,
+							repeatDelay: 0.3,
+							duration: 1,
+						}}
+					></motion.div>
 				</div>
 			</div>
 		</div>

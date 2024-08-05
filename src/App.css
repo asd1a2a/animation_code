@@ -33,7 +33,7 @@ line {
 
 .animation-project {
 	width: 100%;
-	height: 100vh;
+	height: 200vh;
 	margin: 0 auto;
 	color: #fff;
 	text-align: center;
@@ -279,8 +279,8 @@ line {
 
 .box13 {
 	position: absolute;
-	left: 1300px;
-	top: 300px;
+	left: 1320px;
+	top: 320px;
 	width: 300px;
 	height: 300px;
 }
@@ -319,4 +319,92 @@ line {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+}
+
+.box14 {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	border-radius: 50px;
+	top: 500px;
+	left: 100px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box14 .hour {
+	width: 45px;
+	height: 4px;
+	border-radius: 2px;
+	background-color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.box14 .m {
+	width: 25px;
+	height: 4px;
+	border-radius: 2x;
+	background-color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.box15 {
+	width: 100px;
+	height: 100px;
+	border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0.2);
+	left: 300px;
+	position: absolute;
+	top: 500px;
+}
+
+.box15 .out {
+	width: 80px;
+	height: 40px;
+	margin: 10px auto;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 10px;
+}
+
+.box15 .out p {
+	color: #fff;
+	line-height: 40px;
+	font-size: 22px;
+	font-weight: 700;
+}
+
+.box15 .out .btn-out {
+	width: 80px;
+	height: 40px;
+	margin: 15px auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.box15 .out .btn-out .btn {
+	width: 20px;
+	height: 20px;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 5px;
+}
+
+.box17 {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 500px;
+	left: 500px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.box17 .dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 3px;
+	background-color: #fff;
 }
