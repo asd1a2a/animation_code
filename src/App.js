@@ -445,9 +445,27 @@ function App() {
 						<motion.div className="handle" layout transition={spring} />
 					</div>
 				</div>
-				<div className="box20">
+				<motion.div
+					className="box20"
+					whileHover={{
+						scale: 1.1,
+						transition: {
+							duration: 0.1,
+							pathLength: { type: "spring", duration: 0.5, bounce: 1 },
+						},
+					}}
+				>
 					<h3>Hover Me!</h3>
-				</div>
+				</motion.div>
+				<motion.div
+					className="box21"
+					whileTap={{
+						scale: 0.9,
+						ease: "easeInOut",
+					}}
+				>
+					<h3>Click Me!</h3>
+				</motion.div>
 			</div>
 		</div>
 	);

@@ -45,7 +45,7 @@ line {
 	margin: 0 auto;
 	color: #fff;
 	text-align: center;
-	background: linear-gradient(180deg, #ff008c 0%, rgb(211, 9, 225) 100%);
+	background: linear-gradient(180deg, #0055ff 0%, rgb(0, 153, 255) 100%);
 }
 
 .animation-project h1 {
@@ -484,5 +484,30 @@ line {
 }
 
 .box20:hover h3 {
-	color: rgb(214, 47, 178);
+	color: rgb(51, 145, 249);
+}
+
+.box21 {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 300px;
+	top: 700px;
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+	transition: all 0.2s;
+}
+
+.box21 h3 {
+	text-align: center;
+	line-height: 100px;
+	transition: all 1s;
+}
+
+.box21:hover {
+	background-color: #fff;
+}
+
+.box21:hover h3 {
+	color: rgb(51, 145, 249);
 }
